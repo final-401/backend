@@ -43,7 +43,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     user_name = models.CharField(max_length=70, unique=True)
     first_name = models.CharField(max_length=70, blank=True)
     last_name = models.CharField(max_length=70, blank=True)
-    address = models.TextField(max_length=70, blank=True)
+    address = models.TextField(max_length=230, blank=True)
     # phone = models.IntegerField(max_length=14, blank=True)
     phone = PhoneNumberField(null=False, blank=False, unique=True)
     start_date = models.DateTimeField(default=timezone.now)
