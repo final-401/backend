@@ -24,3 +24,20 @@ class Pet(models.Model):
 
 
 
+
+class supplies(models.Model):
+
+  
+    type=models.CharField(max_length=70,blank=False)
+    product_name = models.CharField(blank=True,max_length=100,null=True)
+    description = models.TextField(blank=True,max_length=500,null=True)
+    price = models.FloatField(default=0,validators=[MinValueValidator(0)])
+    quantity = models.IntegerField(default=1)
+    published = models.DateTimeField(default=timezone.now, blank=True)
+    picture = models.ImageField(upload_to='product', blank=True)
+
+    def __str__(self):  
+        return self.product_name + ' ' + self.type
+
+
+
