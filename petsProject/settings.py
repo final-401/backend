@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # local app
     'user',
     'pet',
+    'clinic',
     # third party
     'phonenumber_field',
 ]
