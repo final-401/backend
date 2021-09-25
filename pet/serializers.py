@@ -7,3 +7,7 @@ class PetSerializer(serializers.ModelSerializer):
         fields ='__all__'
         model = Pet
 
+class SuppliesSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields ='__all__'
+        model = Supplies
