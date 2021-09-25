@@ -27,7 +27,6 @@ class IsDoctorOrReadOnly(permissions.BasePermission):
         if request.user is None:
             return True
         
-
-        return (request.user.role == "doctor" )
+        return request.user.role == "doctor" 
 
 
