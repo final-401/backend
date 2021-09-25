@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'user',
     'pet',
     'clinic',
+    'cart',
     # third party
     'rest_framework',
     'phonenumber_field',
