@@ -15,8 +15,8 @@ class Clinic(models.Model):
 
     clinc_name = models.CharField(blank=True,max_length=70,null=True)
     location = models.TextField(blank=True,max_length=500,null=True)
-    starthoure=models.TimeField(help_text="Hour:Minute")
-    endhoure=models.TimeField(help_text="Hour:Minute")
+    starthoure=models.TimeField(help_text="Hour:Minute",blank=True)
+    endhoure=models.TimeField(help_text="Hour:Minute",blank=True)
     phone = PhoneNumberField(null=False, blank=False, unique=True)
     email = models.EmailField(_('email address'), unique=True)
     picture = models.ImageField(upload_to='clinc', blank=True)
