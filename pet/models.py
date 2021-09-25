@@ -25,7 +25,7 @@ class Pet(models.Model):
 
 
 
-class supplies(models.Model):
+class Supplies(models.Model):
 
   
     type=models.CharField(max_length=70,blank=False)

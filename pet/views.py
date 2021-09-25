@@ -13,3 +13,5 @@ class PetDetail(generics.RetrieveDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     queryset = Pet.objects.all()
     serializer_class = PetSerializer
+
+

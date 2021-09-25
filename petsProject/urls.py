@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/v1/clinic/" , include("clinic.urls")),
     path("api/v1/pet/" , include("pet.urls")),
+    path("api/v1/" , include("pet.urls")),
+
 
 ]
 if settings.DEBUG:
