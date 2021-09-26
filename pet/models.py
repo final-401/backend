@@ -41,3 +41,7 @@ class Supplies(models.Model):
 
 
 
+
+class Profile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    Supplies = models.ManyToManyField(Supplies, blank=True)

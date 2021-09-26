@@ -25,6 +25,7 @@ urlpatterns = [
     path("api/v1/clinic/" , include("clinic.urls")),
     path("api/v1/" , include("pet.urls")),
     path('api/user/', include('user.urls', namespace='user')),
+    path('api/cart/', include('cart.urls')),
 
 
 
