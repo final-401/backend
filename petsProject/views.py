@@ -7,7 +7,10 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(user)
         token["email"] = user.email
         token["username"] = user.user_name
-        token["role"] = user.role
+        # token["role"] = user.role
+        # token['firstname'] = user.first_name
+        # token['lastname']=user.last_name
+
 
 
 
