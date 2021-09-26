@@ -54,7 +54,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
         max_length=12, choices=options, default='customer'
     )
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
 
     objects = CustomAccountManager()
