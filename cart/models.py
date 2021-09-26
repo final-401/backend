@@ -2,7 +2,7 @@
 from django.db import models
 from django.conf import settings
 
-from pet.models import Supplies,Profile
+from pet.models import Supplies
 
 
 
@@ -24,7 +24,7 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    product = models.OneToOneField(Supplies, on_delete=models.CASCADE)
+    product = models.ForeignKey(Supplies, on_delete=models.CASCADE)
     is_ordered = models.BooleanField(default=False)
     date_added = models.DateTimeField(auto_now=True)
     date_ordered = models.DateTimeField(null=True)

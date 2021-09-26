@@ -27,7 +27,6 @@ class Pet(models.Model):
 
 class Supplies(models.Model):
 
-  
     type=models.CharField(max_length=70,blank=False)
     product_name = models.CharField(blank=True,max_length=100,null=True)
     description = models.TextField(blank=True,max_length=500,null=True)
@@ -42,6 +41,4 @@ class Supplies(models.Model):
 
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    Supplies = models.ManyToManyField(Supplies, blank=True)
+

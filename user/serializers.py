@@ -33,3 +33,12 @@ class CustomUserSerializer(serializers.ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
+
+
+
+class UserSerializer(serializers.ModelSerializer):
+    # pet=OrderItemserializers(many=True,read_only=True)
+
+    class Meta:
+        fields =['id','user_name','first_name','last_name']
+        model = NewUser
