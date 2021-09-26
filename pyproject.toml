@@ -8,6 +8,12 @@ authors = ["AbdullahELian1 <abodelian28@gmail.com>"]
 python = "^3.8.5"
 Django = "^3.2.7"
 djangorestframework = "^3.12.4"
+Pillow = "^8.3.2"
+django-phonenumber-field = "^5.2.0"
+phonenumbers = "^8.12.33"
+djangorestframework-simplejwt = "^4.8.0"
+cors = "^1.0.1"
+django-cors-headers = "^3.8.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.9b0"
