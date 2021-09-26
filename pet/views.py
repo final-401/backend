@@ -11,7 +11,7 @@ class PetList(generics.ListCreateAPIView):
     serializer_class = PetSerializer
 
 
-class PetDetail(generics.RetrieveDestroyAPIView):
+class PetDetail(generics.RetrieveUpdateAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     queryset = Pet.objects.all()
     serializer_class = PetSerializer

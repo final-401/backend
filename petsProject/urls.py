@@ -19,13 +19,24 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from rest_framework_simplejwt import views as jwt_views
+from .views import MyTokenObtainPairView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/v1/clinic/" , include("clinic.urls")),
     path("api/v1/" , include("pet.urls")),
-    path('api/user/', include('user.urls', namespace='user')),
-    path('api/cart/', include('cart.urls')),
+    path('api/v1/user/', include('user.urls', namespace='user')),
+    path('api/v1/cart/', include('cart.urls')),
+    path(
+        "api/v1/token/",
+        MyTokenObtainPairView.as_view(),
+        name="token_obtain_pair",
+    ),
+    path(
+        "api/v1/token/refresh",
+        jwt_views.TokenRefreshView.as_view(),
+        name="token_refresh",
+    ),
 
 
 
