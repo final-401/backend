@@ -47,7 +47,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     # phone = models.IntegerField(max_length=14, blank=True)
     phone = PhoneNumberField(null=False, blank=False, unique=True)
     start_date = models.DateTimeField(default=timezone.now)
-    picture = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    picture = models.CharField(max_length=1000,blank=True)
     about = models.TextField(_(
         'about'), max_length=500, blank=True)
     role = models.CharField(

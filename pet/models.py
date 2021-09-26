@@ -17,7 +17,7 @@ class Pet(models.Model):
     price = models.FloatField(default=0,validators=[MinValueValidator(0)])
     published = models.DateTimeField(default=timezone.now, blank=True)
     adoption=models.BooleanField(default=False)
-    picture = models.ImageField(upload_to='pets', blank=True)
+    picture = models.CharField(max_length=1000,blank=True)
 
     def __str__(self):  
         return self.name_pet + ' ' + self.type
@@ -33,7 +33,7 @@ class Supplies(models.Model):
     price = models.FloatField(default=0,validators=[MinValueValidator(0)])
     quantity = models.IntegerField(default=1)
     published = models.DateTimeField(default=timezone.now, blank=True)
-    picture = models.ImageField(upload_to='product', blank=True)
+    picture = models.CharField(max_length=1000,blank=True)
 
     def __str__(self):  
         return self.product_name + ' ' + self.type

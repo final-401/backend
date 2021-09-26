@@ -19,7 +19,7 @@ class Clinic(models.Model):
     endhoure=models.TimeField(help_text="Hour:Minute",blank=True)
     phone = PhoneNumberField(null=False, blank=False, unique=True)
     email = models.EmailField(_('email address'), unique=True)
-    picture = models.ImageField(upload_to='clinc', blank=True)
+    picture = models.CharField(max_length=1000,blank=True)
 
 
     def __str__(self):  
