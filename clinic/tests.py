@@ -5,8 +5,6 @@ from rest_framework.test import APITestCase
 from .models import Clinic
 
 class SuppliesModelTests(APITestCase):
-
-    
     def setUp(self):
 
         self.test_user = get_user_model().objects.create_user(user_name='Anas',password='1234',email='a@a.com',first_name='test',phone='077168528',role='doctor')
@@ -30,11 +28,6 @@ class SuppliesModelTests(APITestCase):
             "email": "a@ww.com",
             "picture": "11111",
             "user": 1}
-
-
-    
-    
-    
 
     
     def test_create_cinic(self):
