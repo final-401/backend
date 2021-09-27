@@ -11,19 +11,19 @@ class PetList(generics.ListCreateAPIView):
     serializer_class = PetSerializer
 
 
-class PetDetail(generics.RetrieveUpdateAPIView):
+class PetDetail(generics.RetrieveDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     queryset = Pet.objects.all()
     serializer_class = PetSerializer
 
 class SuppliesList(generics.ListCreateAPIView):
-    permission_classes = (IsAdminUser,)
+    # permission_classes = (IsAdminUser,)
     queryset = Supplies.objects.all()
     serializer_class = SuppliesSerializer
 
 
 class SuppliesDetail(generics.RetrieveDestroyAPIView):
-    permission_classes = (IsAdminUser,)
+    # permission_classes = (IsAdminUser,)
 
     queryset = Supplies.objects.all()
     serializer_class = SuppliesSerializer
