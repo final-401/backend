@@ -17,13 +17,13 @@ class PetDetail(generics.RetrieveUpdateAPIView):
     serializer_class = PetSerializer
 
 class SuppliesList(generics.ListCreateAPIView):
-    permission_classes = (IsAdminUser,)
+    # permission_classes = (IsAdminUser,)
     queryset = Supplies.objects.all()
     serializer_class = SuppliesSerializer
 
 
 class SuppliesDetail(generics.RetrieveDestroyAPIView):
-    permission_classes = (IsAdminUser,)
+    # permission_classes = (IsAdminUser,)
 
     queryset = Supplies.objects.all()
     serializer_class = SuppliesSerializer
