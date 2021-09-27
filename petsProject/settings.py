@@ -42,7 +42,7 @@ ENVIRONMENT = env.str("ENVIRONMENT")
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ir$_1wq82)$va+dci)eb+vpu%3%b0ju_kz7&kts0qv-fm!3hb*'
+SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -106,9 +106,13 @@ WSGI_APPLICATION = 'petsProject.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": env.str("DATABASE_ENGINE"),
+        "NAME": env.str("DATABASE_NAME"),
+        "USER": env.str("DATABASE_USER"),
+        "PASSWORD": env.str("DATABASE_PASSWORD"),
+        "HOST": env.str("DATABASE_HOST"),
+        "PORT": env.int("DATABASE_PORT"),
     }
 }
 
