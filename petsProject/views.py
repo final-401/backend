@@ -10,6 +10,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token["role"] = user.role
         token['firstname'] = user.first_name
         token['lastname']=user.last_name
+        token['picture']=user.picture
 
 
 

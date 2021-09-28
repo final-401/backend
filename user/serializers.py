@@ -15,13 +15,13 @@ class CustomUserSerializer(serializers.ModelSerializer):
     role=serializers.CharField(required=True)
     first_name=serializers.CharField(required=True)
     phone=PhoneNumberField(required=True)
-    
+    picture=serializers.CharField()
     last_name=serializers.CharField()
     address=serializers.CharField()
   
     class Meta:
         model = NewUser
-        fields = ('email', 'user_name', 'password','phone','first_name','role','last_name','address')
+        fields = ('email', 'user_name', 'password','phone','first_name','role','last_name','address','picture')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
