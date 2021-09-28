@@ -2,7 +2,6 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
-
 from  .models import Pet,Supplies
 
 
@@ -66,20 +65,20 @@ class APITest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED, self.test_user.id)
         self.assertEqual(Pet.objects.count(), 2)
 
+    
+    # def test_update_pet(self):
+    #     url = reverse('Petdetail',args=[self.test_pet.id])
+    #     data = {
+    #         "user_id": 1,
+    #         "type": "DogGGGGG",
+    #         "name_pet": "FOFO",
+    #         "description": "aa",
+    #         "price": 20.0,
+    #         "published": "2021-09-27T18:37:47.162347Z",
+    #         "picture": "111"}
 
-    def test_update_pet(self):
-        url = reverse('Petdetail',args=[self.test_pet.id])
-        data = {
-            "user_id": 1,
-            "type": "DogGGGGG",
-            "name_pet": "FOFO",
-            "description": "aa",
-            "price": 20.0,
-            "published": "2021-09-27T18:37:47.162347Z",
-            "picture": "111"}
-
-        response = self.client.put(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_200_OK, url)
+    #     response = self.client.put(url, data, format='json')
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK, url)
 
 
 
