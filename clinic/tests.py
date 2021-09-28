@@ -37,4 +37,36 @@ class SuppliesModelTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED, self.test_user.id)
         self.assertEqual(Clinic.objects.count(), 1)
 
-    
+    def test_list(self):
+        
+        response = self.client.get(reverse('clinic_list'))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        
+    def test_create_user(self):
+        assert  self.test_user.user_name=="Anas"
+        assert  self.test_user.first_name=="test"
+        
+    def test_updata_cinic(self):
+         
+        url = reverse('ClinicListCreate_list')
+        response = self.client.post(url, self.data, format='json')
+        
+        url = reverse('clinic_detail',args=[1])
+
+        data={
+            "id": 1,
+            "clinc_name": "Sowr",
+            "location": "aaa",
+            "starthoure": "02:01:00",
+            "endhoure": "14:01:00",
+            "phone": "+962777168528",
+            "email": "a@ww.com",
+            "picture": "11111",
+            "user": 1}
+
+        response = self.client.put(url, data, format='json')
+        print(response)
+
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK, url)
+        self.assertEqual(Clinic.objects.count(), 1)
