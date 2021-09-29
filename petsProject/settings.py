@@ -192,4 +192,7 @@ SIMPLE_JWT = {
 
 }
 
-CORS_ALLOWED_ORIGINS = [    "http://127.0.0.1:3000", "0.0.0.0" , "http://localhost:3000" ,  ]
+CORS_ORIGIN_WHITELIST = tuple(env.list("ALLOWED_ORIGINS"))
+CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
+
+# CORS_ALLOWED_ORIGINS = [    "http://127.0.0.1:3000", "0.0.0.0" , "http://localhost:3000" ,  ]
